@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  zketch color system.
+  Light mode: warm paper background, deep ink text, violet primary, amber accent.
+  Dark mode: near-black "chalkboard" background, violet/amber pop against it.
+  All colors are HSL triplets (no `hsl()` wrapper) so Tailwind can apply opacity
+  modifiers, e.g. bg-primary/50.
+*/
+@layer base {
+  :root {
+    --background: 250 40% 99%;
+    --foreground: 255 25% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 255 25% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 255 25% 12%;
+
+    --primary: 262 83% 58%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 250 30% 95%;
+    --secondary-foreground: 255 20% 20%;
+
+    --muted: 250 25% 95%;
+    --muted-foreground: 255 10% 45%;
+
+    --accent: 24 95% 53%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 250 20% 89%;
+    --input: 250 20% 89%;
+    --ring: 262 83% 58%;
+
+    --radius: 0.85rem;
+  }
+
+  .dark {
+    --background: 258 32% 7%;
+    --foreground: 250 25% 96%;
+
+    --card: 258 28% 10%;
+    --card-foreground: 250 25% 96%;
+
+    --popover: 258 28% 10%;
+    --popover-foreground: 250 25% 96%;
+
+    --primary: 262 85% 70%;
+    --primary-foreground: 258 32% 8%;
+
+    --secondary: 258 22% 16%;
+    --secondary-foreground: 250 15% 90%;
+
+    --muted: 258 22% 15%;
+    --muted-foreground: 250 10% 65%;
+
+    --accent: 27 96% 60%;
+    --accent-foreground: 258 32% 8%;
+
+    --destructive: 0 63% 48%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 258 20% 19%;
+    --input: 258 20% 19%;
+    --ring: 262 85% 70%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
